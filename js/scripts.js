@@ -12,9 +12,16 @@ function calculateFertileDays() {
     const fertileEnd = new Date(ovulationDay);
     fertileEnd.setDate(ovulationDay.getDate() + 1);
 
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formattedFertileStart = fertileStart.toLocaleDateString(
+      "es-DO",
+      options
+    );
+    const formattedFertileEnd = fertileEnd.toLocaleDateString("es-DO", options);
+
     document.getElementById(
       "fertility-result"
-    ).innerText = `Tus días fértiles son del ${fertileStart.toDateString()} al ${fertileEnd.toDateString()}`;
+    ).innerText = `Tus días fértiles son del ${formattedFertileStart} al ${formattedFertileEnd}`;
   } else {
     document.getElementById("fertility-result").innerText =
       "Por favor, completa todos los campos.";
