@@ -44,7 +44,10 @@ header .navbar-nav .nav-link:hover {
 main {
   padding: 40px;
 }
-
+.video-custom {
+  border-radius: 20px;
+  overflow: hidden;
+}
 .card {
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
